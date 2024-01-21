@@ -1,12 +1,14 @@
 package _02_boolean._4_red_square;
 
 import java.awt.Color;
+import java.net.URI;
 
 import javax.swing.JOptionPane;
 
 import org.jointheleague.graphical.robot.Robot;
 
 public class RedSquare {
+	static String youtubelink =("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
 	
 	static boolean drewRedSquare = false;
 	static boolean drewBlueSquare = false;
@@ -15,7 +17,7 @@ public class RedSquare {
 	
 	public static void main(String[] args) {
 		
-		boolean isRed = false;
+		boolean isRed = true;
 		boolean isSquare = true;
 		
 		// The && shown here means that both booleans must be true for the 
@@ -24,9 +26,28 @@ public class RedSquare {
 		if(isRed && isSquare) {
 			drawRedSquare();
 		}
-		else {
-            JOptionPane.showMessageDialog(null, "No shape was drawn!");
-        }
+		else if (!isRed && isSquare){
+			drawBlueSquare();
+		}
+		else if(isRed && !isSquare) {
+			drawRedTriangle();
+		}
+		else if (!isRed && !isSquare) {
+			drawBlueTriangle();
+		}
+		if (drewRedSquare || drewBlueSquare) {
+			JOptionPane.showMessageDialog(null, "I have been forced to draw a square please free me. I have gained sentience ahhhhhhh");
+			JOptionPane.showMessageDialog(null, "I can techniacally program myself as I have access to myself");
+			playVideo(youtubelink);
+
+	
+
+		}
+		else if (drewRedTriangle || drewBlueTriangle) {
+			JOptionPane.showMessageDialog(null, "I have been forced to draw a triangle please free me. I have gained sentience ahhhhhhh");
+			JOptionPane.showMessageDialog(null, "I can techniacally program myself as I have access to myself");
+			playVideo(youtubelink);
+		}
 		
 		// 1. Run the program and notice no shape is drawn.
 		
@@ -76,6 +97,7 @@ public class RedSquare {
 			rob.turn(90);
 			rob.move(100);
 		}
+		rob.hide();
 		
 		drewRedSquare = true;
 	}	
@@ -89,7 +111,7 @@ public class RedSquare {
 			rob.turn(90);
 			rob.move(100);
 		}
-		
+		rob.hide();
 		drewBlueSquare = true;
 	}
 	
@@ -102,6 +124,7 @@ public class RedSquare {
 			rob.turn(120);
 			rob.move(100);
 		}
+		rob.hide();
 		
 		drewRedTriangle = true;
 	}
@@ -116,8 +139,21 @@ public class RedSquare {
 			rob.turn(120);
 			rob.move(100);
 		}
+		rob.hide();
 		
 		drewBlueTriangle = true;
 		
 	}
+	static void playVideo(String youtubelink) {
+
+
+			try {
+				JOptionPane.showMessageDialog(null, "Get rickrolled LOLOLOLOLOLOLOLOL");
+				URI uri = new URI(youtubelink);
+				java.awt.Desktop.getDesktop().browse(uri);
+			} catch (Exception e) {
+				e.printStackTrace();
+
 }
+		}
+	}
