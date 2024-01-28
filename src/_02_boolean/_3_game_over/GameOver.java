@@ -12,7 +12,6 @@ public class GameOver {
 		String var = JOptionPane.showInputDialog("Is the game over?");
 		if (var.equals("yes")) {
 			gameOver = true;
-			
 		}
 		}
 		// 2. If they answer "yes" change gameOver to true.

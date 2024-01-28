@@ -1,7 +1,10 @@
 package _02_boolean._5_googly_eyes;
 
 import processing.core.PApplet;
+
 import processing.core.PImage;
+
+
 
 /*
  * Goal: Put googly eyes on a face!
@@ -49,6 +52,7 @@ public class GooglyEyes extends PApplet {
     
     @Override
     public void setup() {
+    
     	face = loadImage("/Users/league/git/level-0-module-4-Anonymous1225/src/_02_boolean/_5_googly_eyes/face.png");
     	size(800,600);
         face.resize(800,600);
@@ -56,12 +60,39 @@ public class GooglyEyes extends PApplet {
 
     @Override
     public void draw() {
+    	image (face, 0,0);
     	noStroke();
     	fill(255,255,255);
-    	ellipse(70,70,70,70);
+    	ellipse(400,270,140,140);
     	fill(0,0,0);
-    	ellipse(70,70,35,35);
+
+    	fill(255,255,255);
+    	ellipse(300,270,140,140);
+    	fill(0,0,0);
+    	float xdis = mouseX-400;
+    	float ydis = mouseY-270;
+    	float line1 = xdis*xdis;
+    	float liney = ydis*ydis;
+    	float dis = line1+liney;
+    	double dist =Math.pow(dis, 0.5);
+    	if (dist<0) {
+    		dist=dist*-1;
+    	}
+    	System.out.println(mouseX + "x");
+    	System.out.println(mouseY + "y");
+    	if (dist>=70) {
+    		double idk = xdis/ydis;
+    		mouseX=435;
+    		int idkk = Interger.parseInt(idk);
+    		mouseY=mouseX*idk;
+    		//mousex should be equal
+ 
+    	}
+    	
+    	ellipse(mouseX,mouseY,70,70);
+    	ellipse(mouseX-100,mouseY,70,70);
     }
+    
 
     static public void main(String[] args) {
         PApplet.main(GooglyEyes.class.getName());
