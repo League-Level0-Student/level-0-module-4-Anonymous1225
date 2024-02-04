@@ -40,7 +40,7 @@ import processing.core.PImage;
 public class WheresWaldo extends PApplet {
     static final int WIDTH = 600;
     static final int HEIGHT = 400;
-
+//    waldo = loadImage("waldo.jpeg");
     PImage waldo;
 
     @Override
