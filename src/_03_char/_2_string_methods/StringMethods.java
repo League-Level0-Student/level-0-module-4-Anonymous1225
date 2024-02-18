@@ -8,7 +8,9 @@ public class StringMethods {
 		String idk = ("hola"); 
 		// 2. Print the 3rd char of your String to the console.
 		//    HINT: .charAt
-		for (String)
+		System.out.print(idk.charAt(3-1));
+			
+		
 		// 3. Print the length of your String to the console.
 		//    HINT: .length()
 
